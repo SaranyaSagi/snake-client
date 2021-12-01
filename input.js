@@ -51,6 +51,9 @@ const handleUserInput = function(key) {
   if (key === 'e')
   connection.write("Say: Ssss")
 
+  if (key === 'z')
+  connection.write("Say: Hey!")
+
 
 };
 
