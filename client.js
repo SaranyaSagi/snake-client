@@ -10,9 +10,9 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
   
-  process.stdin.on('data', function(message){
-    client.write(message);
-  });
+  // process.stdin.on('data', function(message){
+  //   conn.write(message);
+  // });
 
   conn.on('connect', () => {
     console.log('Successfully connected to game server');
