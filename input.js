@@ -16,7 +16,6 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function(key) {
-  console.log(key)
   //specify what happens when paricular key is pressed
   if (key === '\u0003') {
     process.exit();
