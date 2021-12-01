@@ -10,13 +10,19 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
   
+  process.stdin.on('data', function(message){
+    client.write(message);
+  });
+
   conn.on('connect', () => {
-    console.log('connected to live snake server');
+    console.log('Successfully connected to game server');
+    conn.write("Name: SOS");
   })
   
   conn.on('data',function(message){
     console.log('server sent:',message);
   });
+
 
   // conn.on('end', function(){
   //   console.log('client got disconnected:');
