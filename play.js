@@ -1,25 +1,16 @@
 const net = require("net");
+//let connection; 
+
 const connect = require('./client');
+const setupInput = require('./input')
 
 console.log("Connecting ...");
-connect();
+let val = connect();
 
-// setup interface to handle user input from stdin
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on('data', handleUserInput);
-  return stdin;
-};
+// const setupInput = (conn) => {
+//   connection = conn;
+// }
 
-const handleUserInput = function(key) {
-  //specify what happens when paricular key is pressed
-  if (key === '\u0003') {
-    process.exit();
-  }
-};
-setupInput();
+setupInput(val);
 
 
